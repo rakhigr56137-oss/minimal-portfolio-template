@@ -1,0 +1,336 @@
+/* ========================================== */
+/* Typography & Reset Basics                  */
+/* ========================================== */
+body {
+    padding-top: 76px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+
+/* ========================================== */
+/* Modern Color System & Gradients            */
+/* ========================================== */
+.gradient-text {
+    background: linear-gradient(135deg, #0d6efd 0%, #0ba9c9 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-subtle-badge {
+    background-color: #f0f5ff;
+    border: 1px solid #d0e1ff;
+}
+
+.text-subtle {
+    color: #0a58ca;
+    font-size: 0.8rem;
+}
+
+.text-dark-title {
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.text-secondary-subtitle {
+    color: #475569;
+}
+
+.text-muted-description {
+    color: #64748b;
+    max-width: 520px;
+}
+
+/* ========================================== */
+/* Hero Layout & Decorative Elements          */
+/* ========================================== */
+.hero-section {
+    padding-top: 0rem;
+    padding-bottom: 8rem;
+}
+
+/* Ambient radial glow in the background layout */
+.bg-glow-blur {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(11, 91, 107, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(40px);
+    z-index: 1;
+}
+
+/* ========================================== */
+/* Premium Buttons & Interactive Effects      */
+/* ========================================== */
+.btn-premium-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.25) !important;
+    color: #ffffff;
+}
+
+.btn-premium-outline {
+    background: transparent;
+    color: #475569;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium-outline:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* ========================================== */
+/* Image & Interface Element Styling          */
+/* ========================================== */
+.hero-visual-wrapper {
+    max-width: 420px;
+}
+
+.premium-hero-img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border: 8px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-hero-img:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+/* Glassmorphism mini-card float component */
+.glass-accent-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.bg-primary-soft {
+    background-color: #e0f2fe;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* ========================================== */
+/* Micro-Animations                           */
+/* ========================================== */
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    body { padding-top: 56px; }
+    .premium-hero-img {
+        width: 290px;
+        height: 290px;
+        margin-top: 2rem;
+    }
+    .glass-accent-card { display: none; } /* Clear float cards on small screens */
+}
+
+/* ========================================== */
+/*          ABOUT ME SECTION                  */
+/* ========================================== */
+
+/* ========================================== */
+/* About Me & Skills Layout Components        */
+/* ========================================== */
+.about-section {
+    position: relative;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Accent structural line for headers */
+.accent-line {
+    width: 40px;
+    height: 3px;
+    background-color: #0d6efd;
+    border: none;
+    opacity: 1;
+    border-radius: 2px;
+}
+
+/* Information Box Grid Elements */
+.info-matrix .bg-white {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-matrix .bg-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Skills Box Container Customization */
+.skills-wrapper {
+    border: 1px solid #e2e8f0;
+}
+
+/* Bootstrap progress bar custom overrides */
+.progress {
+    background-color: #f1f5f9;
+    overflow: visible;
+}
+
+.progress-bar {
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom icon formatting adjustment inside skills */
+.skills-wrapper i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* ========================================== */
+/*          PROJECT  SECTION                  */
+/* ========================================== */
+
+/* ========================================== */
+/* Projects Component Elements                */
+/* ========================================== */
+.projects-section {
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Card Container Configuration */
+.project-card {
+    border-radius: 16px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Lift and soft glowing shadow on hover */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Image Aspect Locking Frame */
+.project-img-container {
+    width: 100%;
+    height: 220px; /* Forces uniform height across every project item */
+    overflow: hidden;
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Image zoom feedback when customer hovers over card container */
+.project-card:hover .project-thumbnail {
+    transform: scale(1.05);
+}
+
+/* Custom Text Restraints for Sub-headers */
+.max-w-xl {
+    max-width: 650px;
+}
+
+/* Fix link icons layout tracking */
+.project-card .btn-link i {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.project-card .btn-link:hover i {
+    transform: translateX(3px); /* Subtle nudge right on interaction */
+}
+
+/* ========================================== */
+/* Contact Component Layout Styles            */
+/* ========================================== */
+.contact-section {
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Contact Anchor Mini Icons */
+.contact-icon-frame {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+}
+
+/* Dynamic line underline effect on string interaction */
+.contact-link {
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #0d6efd !important;
+    text-decoration: underline !important;
+}
+
+/* Input Elements Structural Changes */
+.contact-form-card {
+    border-color: #e2e8f0 !important;
+}
+
+.custom-form-input {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Focused input border system enhancement */
+.custom-form-input:focus {
+    background-color: #ffffff;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
+    outline: 0;
+}
+
+/* ========================================== */
+/* Footer Component Styles                    */
+/* ========================================== */
+footer {
+    background-color: #0f172a !important; /* Premium deep onyx hue */
+}
+
+.footer-social-links a {
+    font-size: 1.2rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-social-links a:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
